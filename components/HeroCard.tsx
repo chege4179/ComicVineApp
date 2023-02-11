@@ -1,14 +1,20 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import {Character} from "../types/GetCharactersResponseTypes";
 
-const HeroCard = ({hero}) => {
+
+type HeroCardProps = {
+	hero:Character
+}
+const HeroCard = ({ hero } : HeroCardProps) => {
 	return (
 		<div className='max-w-xs shadow-xl border-gray-300 border-solid border flex items-center flex-col rounded-lg w-full   bg-white hover:cursor-pointer hover:bg-gray-200 group border-b-8 border-b-indigo-500'>
 			<Image src={hero.image.original_url}
 				  width={320} height={220}
 				  priority={true}
-				  className='w-full rounded-t-lg transition-transform duration-200 ease-in-out group-hover:scale-105 object-cover'/>
+				  className='w-full rounded-t-lg transition-transform duration-200 ease-in-out group-hover:scale-105 object-cover'
+				  alt={hero.name}/>
 			<div className='p-4 flex flex-col w-full'>
 				<div className='flex justify-around'>
 					<div className='text-gray-500 font-semibold -tracking-wide text-sm uppercase ml-2 flex justify-center w-full'>
