@@ -4,6 +4,9 @@ const nextConfig = {
 	images: {
 		domains: ['comicvine.gamespot.com'],
 	},
+	env: {
+		API_URL: 'https://comicvine.gamespot.com'
+	}
 }
 
 module.exports = nextConfig
