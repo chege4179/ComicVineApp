@@ -6,15 +6,7 @@ import {GetCharactersResponse} from "../../types/GetCharactersResponseTypes";
 import {ErrorResponse} from "../../types/ErrorResponse";
 
 
-interface RequestBody extends NextApiRequest {
-     query: {
-          offset: number,
-          limit: number
-     }
-}
-
-
-async function characters(req: RequestBody, res: NextApiResponse<GetCharactersResponse | ErrorResponse>) {
+async function characters(req: NextApiRequest, res: NextApiResponse<GetCharactersResponse | ErrorResponse>) {
      switch (req.method) {
           case "GET":
                console.log({
