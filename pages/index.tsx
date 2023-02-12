@@ -13,7 +13,7 @@ import {Loader, Pagination} from "@mantine/core";
 
 
 export default function Home() {
-	const [page, setPage] = useState<number>(0)
+	const [page, setPage] = useState<number>(1)
      const fetchCharactersPromise = (page:number) => fetch(`/api/characters?offset=${page}&limit=8`)
           .then((res) => res.json())
 
