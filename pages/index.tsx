@@ -1,23 +1,17 @@
-import qs from "qs"
-import {API_KEY, BASE_URL, CORS_PROXY} from "../util/config";
 import HeroCard from "../components/HeroCard";
 import {useQuery} from "react-query";
 import {Character, GetCharactersResponse} from "../types/GetCharactersResponseTypes";
-import {GetServerSideProps} from "next";
-import axios from "axios";
 import Header from "../components/Header";
 import {useState} from "react";
 import {ErrorResponse} from "../types/ErrorResponse";
 import {Loader, Pagination} from "@mantine/core";
-
-
 
 export default function Home() {
 	const [page, setPage] = useState<number>(1)
      const fetchCharactersPromise = (page:number) => fetch(`/api/characters?offset=${page}&limit=8`)
           .then((res) => res.json())
 
-	const {isLoading, isError, error, data, isFetching, isPreviousData} =
+	const {isLoading, isError, error, data, isFetching} =
 		useQuery<GetCharactersResponse,ErrorResponse>(['characters', page], () => fetchCharactersPromise(page),
 			{ keepPreviousData : true })
 	return (

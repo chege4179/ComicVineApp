@@ -6,7 +6,7 @@ import {BsSearch} from "react-icons/bs";
 const Header = () => {
      const router = useRouter()
      const [searchTerm, setSearchTerm] = useState<string>(router.query.query as string)
-     const SearchPost = () =>{
+     const SearchPost = () => {
 
      }
 
@@ -17,7 +17,7 @@ const Header = () => {
                          <Link href='/' passHref className="sm:hidden">
                               <h1 className='text-indigo-500 text-center font-extrabold sm:hidden text-3xl hover:cursor-pointer hover:text-blue-700'>Comic Vine App</h1>
                          </Link>
-                         <div className={`${router.pathname === '/post/new' && 'hidden'} bg-gray-100 p-1 border-2 border-solid border-gray-600 rounded-md w-1/2 mx-2 flex sm:h-3/4 sm:items-center sm:justify-center  md:w-80`}>
+                         <div className={`bg-gray-100 p-1 border-2 border-solid border-gray-600 rounded-md w-1/2 mx-2 flex sm:h-3/4 sm:items-center sm:justify-center  md:w-80`}>
                               <input
                                    value={searchTerm}
                                    onChange={(e) => setSearchTerm(e.target.value)}

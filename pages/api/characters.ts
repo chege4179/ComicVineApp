@@ -4,10 +4,10 @@ import {API_KEY, BASE_URL} from "../../util/config";
 import axios from "axios";
 import {GetCharactersResponse} from "../../types/GetCharactersResponseTypes";
 import {ErrorResponse} from "../../types/ErrorResponse";
-import {offset} from "@floating-ui/core";
+
 
 function getOffset(offset:number,limit:number){
-     if (offset ===1) {
+     if (offset === 1) {
           return 0
      }else {
           return (offset - 1) * limit
